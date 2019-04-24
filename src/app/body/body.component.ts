@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EMAILS } from '../mock-body';
 
 @Component({
   selector: 'app-body',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.sass']
 })
 export class BodyComponent implements OnInit {
+  emails: string[] = EMAILS;
 
   constructor() { }
 

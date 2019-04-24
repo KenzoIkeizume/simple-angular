@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./head.component.sass']
 })
 export class HeadComponent implements OnInit {
-  title: string = "Exemple Angular";
+  title: string = "Example Angular";
 
   constructor() { }
 
