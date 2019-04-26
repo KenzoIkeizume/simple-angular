@@ -7,9 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   subscribes: string[] = [];
+  currentpage: string = 'First';
+  pagesBody: object = {
+    First: [],
+    Second: [],
+    Third: []
+  }
 
   receiveMessage($event) {
-    console.log('$event', $event);
-    this.subscribes = [...this.subscribes, $event.name];
+    this.pagesBody[this.currentpage] = [...this.pagesBody[this.currentpage], $event.name];
+    this.subscribes = this.pagesBody[this.currentpage];
+  }
+
+  page($event) {
+    this.currentpage = $event;
+    this.subscribes = this.pagesBody[this.currentpage];
   }
 }

@@ -3,6 +3,7 @@
   <h1>
     <app-head (messageEvent)="receiveMessage($event)"></app-head>
     <app-body [subscribes]="subscribes"></app-body>
+    <app-footer (clickPage)="page($event)"></app-footer>
   </h1>
 </div>
 

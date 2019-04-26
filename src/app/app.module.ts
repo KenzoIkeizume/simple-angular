@@ -15,13 +15,16 @@ import { DialogComponent } from './dialog/dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
     HeadComponent,
-    DialogComponent
+    DialogComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +38,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatTabsModule,
   ],
   exports: [
     MatCardModule,
@@ -45,6 +49,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
