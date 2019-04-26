@@ -1,8 +1,8 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    <app-head></app-head>
-    <app-body></app-body>
+    <app-head (messageEvent)="receiveMessage($event)"></app-head>
+    <app-body [subscribes]="subscribes"></app-body>
   </h1>
 </div>
 

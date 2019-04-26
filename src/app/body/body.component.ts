@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { EMAILS } from '../mock-body';
 
 @Component({
@@ -8,6 +8,8 @@ import { EMAILS } from '../mock-body';
 })
 export class BodyComponent implements OnInit {
   emails: string[] = EMAILS;
+
+  @Input() subscribes: string[];
 
   constructor() { }
 

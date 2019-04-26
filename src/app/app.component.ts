@@ -6,4 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  subscribes: string[] = [];
+
+  receiveMessage($event) {
+    console.log('$event', $event);
+    this.subscribes = [...this.subscribes, $event.name];
+  }
 }

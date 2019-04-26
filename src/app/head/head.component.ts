@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent, DialogData } from '../dialog/dialog.component';
 
@@ -11,7 +11,9 @@ export class HeadComponent implements OnInit {
   title: string = "Example Angular";
   data: DialogData = {
     name: ''
-  }
+  };
+
+  @Output() messageEvent = new EventEmitter<string>();
 
   constructor(public dialog: MatDialog) { }
 
@@ -24,7 +26,7 @@ export class HeadComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('this.data :', result);
+      this.messageEvent.emit(result);
     });
   }
 }
