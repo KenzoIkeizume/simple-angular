@@ -14,12 +14,12 @@ export class AppComponent {
     Third: []
   }
 
-  receiveMessage($event) {
+  receiveMessage($event: any) {
     this.pagesBody[this.currentpage] = [...this.pagesBody[this.currentpage], $event.name];
     this.subscribes = this.pagesBody[this.currentpage];
   }
 
-  page($event) {
+  page($event: any) {
     this.currentpage = $event;
     this.subscribes = this.pagesBody[this.currentpage];
   }

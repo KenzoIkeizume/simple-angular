@@ -14,7 +14,7 @@ export class FooterComponent implements OnInit {
   ngOnInit() {
   }
 
-  clickTab($event) {
+  clickTab($event: any) {
     this.clickPage.emit($event.target.textContent);
   }
 }
