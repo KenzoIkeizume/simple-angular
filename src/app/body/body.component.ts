@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { EMAILS } from '../mock-body';
+import { EmailService } from '../email.service';
+import { Email } from '../email';
 
 @Component({
   selector: 'app-body',
@@ -7,13 +9,17 @@ import { EMAILS } from '../mock-body';
   styleUrls: ['./body.component.sass']
 })
 export class BodyComponent implements OnInit {
-  emails: string[] = EMAILS;
+  @Input() subscribes: Email[];
 
-  @Input() subscribes: string[];
+  constructor(private emailService: EmailService) {
 
-  constructor() { }
-
-  ngOnInit() {
   }
 
+  getEmails(): void {
+    this.emailService.getEmails().subscribe(emails => this.subscribes = emails);
+  }
+
+  ngOnInit() {
+    this.getEmails();
+  }
 }

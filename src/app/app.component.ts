@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Email } from './email';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   subscribes: string[] = [];
-  currentpage: string = 'First';
+  currentpage: string = 'FIRST';
   pagesBody: object = {
-    First: [],
-    Second: [],
-    Third: []
+    FIRST: [],
+    SECOND: [],
+    THIRD: []
   }
 
   receiveMessage($event: any) {
-    this.pagesBody[this.currentpage] = [...this.pagesBody[this.currentpage], $event.name];
+    this.pagesBody[this.currentpage] = [...this.pagesBody[this.currentpage], new Email(new Date().getUTCMilliseconds(), $event.name)];
     this.subscribes = this.pagesBody[this.currentpage];
   }
 
